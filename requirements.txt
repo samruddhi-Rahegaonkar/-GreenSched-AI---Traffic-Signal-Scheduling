@@ -1,0 +1,90 @@
+"""
+streamlit>=1.28.0
+plotly>=5.15.0
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+opencv-python>=4.8.0
+
+# Testing dependencies
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+"""
+
+# ============================================================================
+# FILE 6: README.md
+# ============================================================================
+
+"""
+# GreenSched AI - Adaptive Traffic Signal Scheduling
+
+## Overview
+GreenSched AI applies Operating System scheduling algorithms to optimize traffic signal timing using real-time vehicle detection and machine learning.
+
+## Features
+- **5 Scheduling Algorithms**: FCFS, SJF, Priority, Round Robin, ML-Based
+- **Real-time Simulation**: Live traffic intersection with vehicle generation
+- **Machine Learning**: Random Forest model learns optimal scheduling decisions
+- **Emergency Vehicle Priority**: Automatic detection and priority handling
+- **Performance Analytics**: Comprehensive metrics and visualization
+
+## Installation
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+## Project Structure
+```
+greensched_ai/
+├── app.py                 # Main Streamlit application
+├── models.py             # Vehicle and TrafficLane classes
+├── schedulers.py         # All scheduling algorithms
+├── traffic_simulation.py # Main simulation engine
+├── requirements.txt      # Dependencies
+└── README.md            # Documentation
+```
+
+## Scheduling Algorithms
+
+### FCFS (First Come First Serve)
+- Prioritizes lanes with oldest waiting vehicles
+- Simple but may cause starvation
+
+### SJF (Shortest Job First)
+- Prioritizes lanes with fewer vehicles
+- Minimizes average wait time
+
+### Priority Scheduling
+- Formula: `(vehicle_count × 2) + (emergency × 100) + anti_starvation`
+- Emergency vehicles get immediate priority
+
+### Round Robin
+- Fair cycling through all lanes
+- Ensures no lane is starved
+
+### ML-Based Scheduling
+- Random Forest predicts optimal lane selection
+- Learns from historical performance data
+- Requires 20+ steps to train effectively
+
+## Usage
+1. Select scheduling algorithm from sidebar
+2. Adjust green light duration
+3. Start simulation and observe performance
+4. Compare algorithms using analytics dashboard
+5. Train ML model after sufficient data collection
+
+## Performance Metrics
+- **Average Wait Time**: Time vehicles spend waiting
+- **Throughput**: Vehicles processed per time unit
+- **Fairness Index**: Prevents lane starvation
+- **Emergency Response**: Priority handling effectiveness
+
+## Future Extensions
+- Multi-intersection coordination
+- Reinforcement Learning integration
+- Real camera integration with YOLO
+- Hardware deployment on Raspberry Pi/Jetson
+"""
